@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Flavours - Feel the heavenly taste.</title>
+   <link rel="icon" href="resources/icon.png">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="flavoursStyle.css">
+   <script type="text/javascript" src="flavoursScript.js"></script>
+</head>
+<body onload="initializeCalls()">
+   <audio id="buttonAudio">
+      <source src="resources/button-click.mp3" type="audio/mpeg">
+         <source src="resources/button-click.mp3" type="audio/wav">
+         </audio>
+         <div class="menuContainer" id="menuContainer">
+            <div class="leftMenuContainer">
+               <div class="leftMenuItem" onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="goToHomePage()">
+                  <a href="flavours.html" id="home">Home</a>
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+               </div>
+               <div class="leftMenuItem" onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="showHideCollapsible()">
+                  <a href="#Categories" id="categories">Categories</a>
+                  <i class="fa fa-long-arrow-right" aria-hidden="true" id = "arrow"></i>
+               </div>
+               <div class="contentCollapsible" id="contentCollapsible">
+                  <div class="leftMenuItem " onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="showProducts()">
+                     <a class="textLeft" href="#Brunch" id="Brunch">Brunch</a>
+                     <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                  </div>
+                  <div class="leftMenuItem" onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="showProducts()">
+                     <a class="textLeft" href="#Dinner" id="Dinner">Dinner</a>
+                     <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                  </div>
+                  <div class="leftMenuItem" onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="showProducts()">
+                     <a class="textLeft" href="#VegOnly" id="VegOnly">VegOnly</a>
+                     <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                  </div>
+               </div>
+               <div class="leftMenuItem" onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="goToAboutUs()">
+                  <a href="#About" id="about">About Us</a>
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+               </div>
+               <div class="leftMenuItem" onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="goToContactPage()">
+                  <a href="contact.html" id = "contact">Contact Us</a>
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+               </div>
+               <div class="leftMenuItem" id = "logout" onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="logout()">
+                  <a href="" id = "logoutRef">Logout</a>
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+               </div>
+               <div class="stackBottom" id="loggedInMessage">
+                  <p>Logged in as Aron</p>
+               </div>
+            </div>
+            <div class="rightMenuContainer" onclick="showHideMenu()">
+            </div>
+         </div>
+         <div class="navbar">
+            <div class="leftContainer" onclick="showHideMenu()">
+               <img class="menuIcon" id="menuCloseIcon" src="resources/menu.png" >
+            </div>
+            <div class=rightContainer>
+               <div class="leftContainerInRight">
+                  <img class = "logo" src="resources/icon.png" alt="Flavours">
+                  <h1>F</h1>
+                  <h3>lavours</h3>
+                  <br>
+                  <p>orever</p>
+               </div>
+               <div class="rightContainerInRight">
+                  <div class="timeAndDate" id="timeAndDate">hello</div>
+                  <div class="HeaderMainContainer">
+                     <div class="HeaderInnerContainer">
+                        <a id="loginMessage" onmouseover="changeImg(this,'resources/user-male.png')" onmouseout="changeImg(this,'resources/user-male-white.png')" onclick="goToLoginScreen()" href="login.html">Login
+                           <img class="rightMenuImage" id="loginimage" src="resources/user-male-white.png" >
+                        </a>
+                        <a onmouseover="changeImg(this,'resources/cartblack.png')" onmouseout="changeImg(this,'resources/cartwhite.png')" href="cart.html">Cart
+                           <img class="rightMenuImage" id="cartImage" src="resources/cartwhite.png" >
+                        </a>
+                        <a onmouseover="changeImg(this,'resources/facebook-black.png')" onmouseout="changeImg(this,'resources/facebook-white.png')" href="https://www.facebook.com/" target="_blank">
+                           <img class="rightMenuImage" id="fbImage" src="resources/facebook-white.png" >
+                        </a>
+                        <a onmouseover="changeImg(this,'resources/insta-black.png')" onmouseout="changeImg(this,'resources/insta-white.png')" href="https://www.instagram.com/" target="_blank">
+                           <img class="rightMenuImage" id="instaImage" src="resources/insta-white.png" >
+                        </a>
+                        <a onmouseover="changeImg(this,'resources/twitter-black.png')" onmouseout="changeImg(this,'resources/twitter-white.png')" href="https://www.twitter.com/" target="_blank">
+                           <img class="rightMenuImage" id="twitterImage" src="resources/twitter-white.png" >
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="wrapper">
+            <div class="section parallax bg1">
+               <div class="SectionHeading">
+                  <h1 >Flavours of India</h1>
+                  <h3 >Feel the heavenly taste</h3>
+                  <div >
+                     <button class="sectionButton" onclick="onClickOfOrderNow()">ORDER NOW</button>
+                  </div>
+               </div>
+            </div>
+            <div class="section2 static fontsection2">
+               <h1 class="">Our Specials</h1>
+               <div class= "gridItemContainer">
+                  <div class="container containerbg1">
+                     <div class="overlay">
+                        <div class = "items"></div>
+                        <div class = "items head">
+                           <p>Malai Kofta (veggie Balls in a Thick Sauce</p>
+                           <hr>
+                        </div>
+                        <div class = "items price">
+                           <p class="old">$8.99</p>
+                           <p class="new">$6.99</p>
+                        </div>
+                        <div class="items cart">
+                           <i class="fa fa-shopping-cart"></i>
+                           <span>ADD TO CART</span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="container containerbg2">
+                     <div class="overlay">
+                        <div class = "items"></div>
+                        <div class = "items head">
+                           <p>Palak Paneer (Spinach & Cottage Cheese)</p>
+                           <hr>
+                        </div>
+                        <div class = "items price">
+                           <p class="old">$10.99</p>
+                           <p class="new">$7.99</p>
+                        </div>
+                        <div class="items cart">
+                           <i class="fa fa-shopping-cart"></i>
+                           <span>ADD TO CART</span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="container containerbg3">
+                     <div class="overlay">
+                        <div class = "items"></div>
+                        <div class = "items head">
+                           <p>Chole Bhatura (Fried Indian Bread with Chickpea Curry)</p>
+                           <hr>
+                        </div>
+                        <div class = "items price">
+                           <p class="old">$12.99</p>
+                           <p class="new">$10.99</p>
+                        </div>
+                        <div class="items cart">
+                           <i class="fa fa-shopping-cart"></i>
+                           <span>ADD TO CART</span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="container containerbg4">
+                     <div class="overlay">
+                        <div class = "items"></div>
+                        <div class = "items head">
+                           <p>Mutter Paneer (Peas and Cottage Cheese)</p>
+                           <hr>
+                        </div>
+                        <div class = "items price">
+                           <p class="old">$7.99</p>
+                           <p class="new">$6.55</p>
+                        </div>
+                        <div class="items cart">
+                           <i class="fa fa-shopping-cart"></i>
+                           <span>ADD TO CART</span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="container containerbg5">
+                     <div class="overlay">
+                        <div class = "items"></div>
+                        <div class = "items head">
+                           <p>Aaloo Paratha (Potato Paratha)</p>
+                           <hr>
+                        </div>
+                        <div class = "items price">
+                           <p class="old">$8.99</p>
+                           <p class="new">$6.99</p>
+                        </div>
+                        <div class="items cart">
+                           <i class="fa fa-shopping-cart"></i>
+                           <span>ADD TO CART</span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="container containerbg6">
+                     <div class="overlay">
+                        <div class = "items"></div>
+                        <div class = "items head">
+                           <p>Hara Bhara Kabab (Vegetarian Kabab)</p>
+                           <hr>
+                        </div>
+                        <div class = "items price">
+                           <p class="old">$7.99</p>
+                           <p class="new">$6.99</p>
+                        </div>
+                        <div class="items cart">
+                           <i class="fa fa-shopping-cart"></i>
+                           <span>ADD TO CART</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="section3 parallax bg2">
+               <p class="conclusionSection">Indian food touches your soul before it touches your tastebuds.<br>&emsp;There is Heaven in every bite.<br><br><br>---- Team Flavours ----</p>
+            </div>
+            <div class="mainFooter">
+               <div class="footer">
+                  <div>
+                     <h3>&emsp;Developers</h3>
+                     <ul>
+                        <li> Afshan Jabeen</li>
+                        <li> Akshit Moturi</li>
+                        <li> Saikrishna Sanmudrala</li>
+                     </ul>
+                  </div>
+                  <div>
+                     <h3>Address</h3>
+                     <p>4555 Av Du Parc<br>H2V4E4, Montreal<br>Quebec, Canada</p>
+                  </div>
+                  <div>
+                     <h3>&emsp;Store opening hours</h3>
+                     <ul>
+                        <li> Monday to Friday - 8:00 AM to 10:00 PM</li>
+                        <li> Saturday - 11:00 AM to 8:00 PM</li>
+                        <li> Sunday - Closed</li>
+                     </ul>
+                  </div>
+                  <div>
+                     <h3>&emsp;Follow us</h3>
+                     <ul>
+                        <li> <a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                        <li> <a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                        <li> <a href="https://www.twitter.com/" target="_blank">Twitter</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="subscriptionFooter">
+                  Subscribe to our Mailing list by entering Email here:&nbsp;
+                  <input type="email" name="subscribemail">&nbsp;
+                  <button> Subscribe now</button>
+               </div>
+            </div>
+         </div>
+      </body>
+      </html>

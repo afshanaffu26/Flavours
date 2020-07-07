@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Flavours - Feel the heavenly taste.</title>
+   <link rel="icon" href="resources/icon.png">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="flavoursStyle.css">
+   <script type="text/javascript" src="flavoursScript.js"></script>
+</head>
+<body onload="initializeCalls()">
+   <audio id="buttonAudio">
+      <source src="resources/button-click.mp3" type="audio/mpeg">
+         <source src="resources/button-click.mp3" type="audio/wav">
+         </audio>
+         <div class="menuContainer" id="menuContainer">
+            <div class="leftMenuContainer">
+               <div class="leftMenuItem" onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="goToHomePage()">
+                  <a href="flavours.html" id="home">Home</a>
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+               </div>
+               <div class="leftMenuItem" onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="showHideCollapsible()">
+                  <a href="#Categories" id="categories">Categories</a>
+                  <i class="fa fa-long-arrow-right" aria-hidden="true" id = "arrow"></i>
+               </div>
+               <div class="contentCollapsible" id="contentCollapsible">
+                  <div class="leftMenuItem " onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="showProducts()">
+                     <a class="textLeft" href="#Brunch" id="Brunch">Brunch</a>
+                     <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                  </div>
+                  <div class="leftMenuItem" onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="showProducts()">
+                     <a class="textLeft" href="#Dinner" id="Dinner">Dinner</a>
+                     <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                  </div>
+                  <div class="leftMenuItem" onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="showProducts()">
+                     <a class="textLeft" href="#VegOnly" id="VegOnly">VegOnly</a>
+                     <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                  </div>
+               </div>
+               <div class="leftMenuItem" onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="goToAboutUs()">
+                  <a href="#About" id="about">About Us</a>
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+               </div>
+               <div class="leftMenuItem" onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="goToContactPage()">
+                  <a href="contact.html" id = "contact">Contact Us</a>
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+               </div>
+               <div class="leftMenuItem" id = "logout" onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="logout()">
+                  <a href="" id = "logoutRef">Logout</a>
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+               </div>
+               <div class="stackBottom" id="loggedInMessage">
+                  <p>Logged in as Aron</p>
+               </div>
+            </div>
+            <div class="rightMenuContainer" onclick="showHideMenu()">
+            </div>
+         </div>
+         <div class="navbar">
+            <div class="leftContainer" onclick="showHideMenu()">
+               <img class="menuIcon" id="menuCloseIcon" src="resources/menu.png" >
+            </div>
+            <div class=rightContainer>
+               <div class="leftContainerInRight">
+                  <img class = "logo" src="resources/icon.png" alt="Flavours">
+                  <h1>F</h1>
+                  <h3>lavours</h3>
+                  <br>
+                  <p>orever</p>
+               </div>
+               <div class="rightContainerInRight">
+                  <div class="timeAndDate" id="timeAndDate">hello</div>
+                  <div class="HeaderMainContainer">
+                     <div class="HeaderInnerContainer">
+                        <a id="loginMessage" onmouseover="changeImg(this,'resources/user-male.png')" onmouseout="changeImg(this,'resources/user-male-white.png')" onclick="goToLoginScreen()" href="#login">Login
+                           <img class="rightMenuImage" id="loginimage" src="resources/user-male-white.png" >
+                        </a>
+                        <a onmouseover="changeImg(this,'resources/cartblack.png')" onmouseout="changeImg(this,'resources/cartwhite.png')" href="cart.html">Cart
+                           <img class="rightMenuImage" id="cartImage" src="resources/cartwhite.png" >
+                        </a>
+                        <a onmouseover="changeImg(this,'resources/facebook-black.png')" onmouseout="changeImg(this,'resources/facebook-white.png')" href="https://www.facebook.com/" target="_blank">
+                           <img class="rightMenuImage" id="fbImage" src="resources/facebook-white.png" >
+                        </a>
+                        <a onmouseover="changeImg(this,'resources/insta-black.png')" onmouseout="changeImg(this,'resources/insta-white.png')" href="https://www.instagram.com/" target="_blank">
+                           <img class="rightMenuImage" id="instaImage" src="resources/insta-white.png" >
+                        </a>
+                        <a onmouseover="changeImg(this,'resources/twitter-black.png')" onmouseout="changeImg(this,'resources/twitter-white.png')" href="https://www.twitter.com/" target="_blank">
+                           <img class="rightMenuImage" id="twitterImage" src="resources/twitter-white.png" >
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="wrapper">
+            <div class="AboutusMainContainer">
+               <div class="about-section">
+                  <h1>About Us</h1>
+                  <p>Welcome to Montreal’s best Indian Restaurant, Flavours </p>
+                  <p>Indian Restaurant is as varied and diverse as the cultures and languages of this great sub-continent, its flavors are as exotic as its climate and as varied as its people. We are part of a unique collection of some of finest Indian restaurants. We offer enjoyable, memorable dining experiences – delicious Indian restaurant, exciting interiors & stylish hospitality. Unusually, we offer genuine Indian food from the true sources – the gourmet homes & street stalls across India’s many regions – prepared by skilled chefs from those regions. Come for genuine delicious Indian food.
+                     At Flavours, Indian Restaurant, we consider our Indian Restaurant an art form. As our family has been passing down recipes for years, we bring those recipes to you. We know your family time is important so let us do the cooking while you enjoy the ambiance and character of our establishment. Enjoy a delicious meal and make it a memorable night with some great friends!
+                     We are serving various and authentic Indian cuisine, that includes Hot Soups and Side Orders, Hot Appetizers, Rice Specialties, Vegetarian Specialties, Tandoori Specialties (Indian-style barbecue), Seafood Specialties, Chicken Specialties, and Lamb Specialties.
+                  </p>
+               </div>
+               <h2 style="text-align:center">Our Team</h2>
+               <div class="rowAboutus">
+                  <div class="column">
+                     <div class="card">
+                        <img src="resources/about1.jpg" alt="Jane" style="width:100%; height: 400px">
+                        <div class="containerAboutUs">
+                           <h2>Saikrishna Samudrala</h2>
+                           <p class="title">Founder & Executive Chef</p>
+                           <p>Experience to Deliver the indian flavours at its best taste. One point of contact for kitchen staff</p>
+                           <p>sam@flavours.com</p>
+                           <br>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="column">
+                     <div class="card">
+                        <img src="resources/about2.jpg" alt="Mike" style="width:100%; height: 400px">
+                        <div class="containerAboutUs">
+                           <h2>Afshan Jabeen</h2>
+                           <p class="title">Partner & Accountant</p>
+                           <p>Manages all the accounts, sales, profits, salaries.One point of contact for all the sales related work.</p>
+                           <p>afshan@flavours.com</p>
+                           <br>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="column">
+                     <div class="card">
+                        <img src="resources/about3.jpg" alt="John" style="width:100%; height: 400px">
+                        <div class="containerAboutUs">
+                           <h2>Akshit Moturi</h2>
+                           <p class="title">Partner & Manager</p>
+                           <p>Manage the Co-ordination between front-staff and kitchen. One point of contact for all the stock related work</p>
+                           <p>ak@flavours.com</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="mainFooter">
+               <div class="footer">
+                  <div>
+                     <h3>&emsp;Developers</h3>
+                     <ul>
+                        <li> Afshan Jabeen</li>
+                        <li> Akshit Moturi</li>
+                        <li> Saikrishna Sanmudrala</li>
+                     </ul>
+                  </div>
+                  <div>
+                     <h3>Address</h3>
+                     <p>4555 Av Du Parc<br>H2V4E4, Montreal<br>Quebec, Canada</p>
+                  </div>
+                  <div>
+                     <h3>&emsp;Store opening hours</h3>
+                     <ul>
+                        <li> Monday to Friday - 8:00 AM to 10:00 PM</li>
+                        <li> Saturday - 11:00 AM to 8:00 PM</li>
+                        <li> Sunday - Closed</li>
+                     </ul>
+                  </div>
+                  <div>
+                     <h3>&emsp;Follow us</h3>
+                     <ul>
+                        <li> <a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                        <li> <a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                        <li> <a href="https://www.twitter.com/" target="_blank">Twitter</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="subscriptionFooter">
+                  Subscribe to our Mailing list by entering Email here:&nbsp;
+                  <input type="email" name="subscribemail">&nbsp;
+                  <button> Subscribe now</button>
+               </div>
+            </div>
+         </div>
+      </body>
+      </html>

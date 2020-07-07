@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Flavours - Feel the heavenly taste.</title>
+   <link rel="icon" href="resources/icon.png">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="flavoursStyle.css">
+   <script type="text/javascript" src="flavoursScript.js"></script>
+</head>
+<body onload="initializeCalls()">
+   <audio id="buttonAudio">
+      <source src="resources/button-click.mp3" type="audio/mpeg">
+         <source src="resources/button-click.mp3" type="audio/wav">
+         </audio>
+         <div class="menuContainer" id="menuContainer">
+            <div class="leftMenuContainer">
+               <div class="leftMenuItem" onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="goToHomePage()">
+                  <a href="flavours.html" id="home">Home</a>
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+               </div>
+               <div class="leftMenuItem" onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="showHideCollapsible()">
+                  <a href="#Categories" id="categories">Categories</a>
+                  <i class="fa fa-long-arrow-right" aria-hidden="true" id = "arrow"></i>
+               </div>
+               <div class="contentCollapsible" id="contentCollapsible">
+                  <div class="leftMenuItem " onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="showProducts()">
+                     <a class="textLeft" href="#Brunch" id="Brunch">Brunch</a>
+                     <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                  </div>
+                  <div class="leftMenuItem" onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="showProducts()">
+                     <a class="textLeft" href="#Dinner" id="Dinner">Dinner</a>
+                     <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                  </div>
+                  <div class="leftMenuItem" onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="showProducts()">
+                     <a class="textLeft" href="#VegOnly" id="VegOnly">VegOnly</a>
+                     <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                  </div>
+               </div>
+               <div class="leftMenuItem" onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="goToAboutUs()">
+                  <a href="#About" id="about">About Us</a>
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+               </div>
+               <div class="leftMenuItem" onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="goToContactPage()">
+                  <a href="contact.html" id = "contact">Contact Us</a>
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+               </div>
+               <div class="leftMenuItem" id = "logout" onmouseover="changeColor(this,'white')" onmouseout="changeColor(this,'#303030')" onclick="logout()">
+                  <a href="" id = "logoutRef">Logout</a>
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+               </div>
+               <div class="stackBottom" id="loggedInMessage">
+                  <p>Logged in as Aron</p>
+               </div>
+            </div>
+            <div class="rightMenuContainer" onclick="showHideMenu()">
+            </div>
+         </div>
+         <div class="navbar">
+            <div class="leftContainer" onclick="showHideMenu()">
+               <img class="menuIcon" id="menuCloseIcon" src="resources/menu.png" >
+            </div>
+            <div class=rightContainer>
+               <div class="leftContainerInRight">
+                  <img class = "logo" src="resources/icon.png" alt="Flavours">
+                  <h1>F</h1>
+                  <h3>lavours</h3>
+                  <br>
+                  <p>orever</p>
+               </div>
+               <div class="rightContainerInRight">
+                  <div class="timeAndDate" id="timeAndDate">hello</div>
+                  <div class="HeaderMainContainer">
+                     <div class="HeaderInnerContainer">
+                        <a id="loginMessage" onmouseover="changeImg(this,'resources/user-male.png')" onmouseout="changeImg(this,'resources/user-male-white.png')" onclick="goToLoginScreen()" href="#login">Login
+                           <img class="rightMenuImage" id="loginimage" src="resources/user-male-white.png" >
+                        </a>
+                        <a onmouseover="changeImg(this,'resources/cartblack.png')" onmouseout="changeImg(this,'resources/cartwhite.png')" href="cart.html">Cart
+                           <img class="rightMenuImage" id="cartImage" src="resources/cartwhite.png" >
+                        </a>
+                        <a onmouseover="changeImg(this,'resources/facebook-black.png')" onmouseout="changeImg(this,'resources/facebook-white.png')" href="https://www.facebook.com/" target="_blank">
+                           <img class="rightMenuImage" id="fbImage" src="resources/facebook-white.png" >
+                        </a>
+                        <a onmouseover="changeImg(this,'resources/insta-black.png')" onmouseout="changeImg(this,'resources/insta-white.png')" href="https://www.instagram.com/" target="_blank">
+                           <img class="rightMenuImage" id="instaImage" src="resources/insta-white.png" >
+                        </a>
+                        <a onmouseover="changeImg(this,'resources/twitter-black.png')" onmouseout="changeImg(this,'resources/twitter-white.png')" href="https://www.twitter.com/" target="_blank">
+                           <img class="rightMenuImage" id="twitterImage" src="resources/twitter-white.png" >
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="wrapper">
+            <div class="loginSection">
+               <div class="loginPageLeftSection"></div>
+               <div class="loginPageRightSection">
+                  <h2>Create an Account</h2>
+                  <br>
+                  <form onsubmit="return false">
+                     <div class="loginPageLoginDetails">
+                        <table class="tableRegistration">
+                           <tr>
+                              <td><label class="loginDetailsInnerElement">First Name*:</label></td>
+                              <td><input class="loginDetailsInnerElement" type="text" name="firstNMame" id="rfname" required></td>
+                           </tr>
+                           <tr>
+                              <td><label class="loginDetailsInnerElement">Last Name*:</label></td>
+                              <td><input class="loginDetailsInnerElement" type="text" name="lastName" id="rlname" required></td>
+                           </tr>
+                           <tr>
+                              <td><label class="loginDetailsInnerElement">Gender:</label></td>
+                              <td>
+                                 <input type="radio" id="male" name="gender" value="male">
+                                 <label for="male">Male</label>
+                                 <input type="radio" id="female" name="gender" value="female">
+                                 <label for="female">Female</label>
+                                 <input type="radio" id="other" name="gender" value="other">
+                                 <label for="other">Other</label>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td><label class="loginDetailsInnerElement">Date of Birth:</label></td>
+                              <td><input class="loginDetailsInnerElement" type="date" id="birthday" name="birthday"></td>
+                           </tr>
+                           <tr>
+                              <td><label class="loginDetailsInnerElement">Username*:</label></td>
+                              <td><input class="loginDetailsInnerElement" type="email" name="usernameInput" id="runame" required></td>
+                           </tr>
+                           <tr>
+                              <td><label class="loginDetailsInnerElement">Password*:</label></td>
+                              <td><input class="loginDetailsInnerElement" type="password" name="passwordInput" id="rpassword" required></td>
+                           </tr>
+                           <tr>
+                              <td><label class="loginDetailsInnerElement"> Re-enter Password*:</label></td>
+                              <td><input class="loginDetailsInnerElement" type="password" name="passwordInput" id="rcpassword" required></td>
+                           </tr>
+                        </table>
+                        <button class="sectionButton LoginButton" type="submit" onclick="register()">Create Your Account</button>
+                        <p>Already have an Accounr? <a href="login.html">Sign in</a></p>
+                     </div>
+                  </form>
+               </div>
+            </div>
+            <div class="mainFooter">
+               <div class="footer">
+                  <div>
+                     <h3>&emsp;Developers</h3>
+                     <ul>
+                        <li> Afshan Jabeen</li>
+                        <li> Akshit Moturi</li>
+                        <li> Saikrishna Sanmudrala</li>
+                     </ul>
+                  </div>
+                  <div>
+                     <h3>Address</h3>
+                     <p>4555 Av Du Parc<br>H2V4E4, Montreal<br>Quebec, Canada</p>
+                  </div>
+                  <div>
+                     <h3>&emsp;Store opening hours</h3>
+                     <ul>
+                        <li> Monday to Friday - 8:00 AM to 10:00 PM</li>
+                        <li> Saturday - 11:00 AM to 8:00 PM</li>
+                        <li> Sunday - Closed</li>
+                     </ul>
+                  </div>
+                  <div>
+                     <h3>&emsp;Follow us</h3>
+                     <ul>
+                        <li> <a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                        <li> <a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                        <li> <a href="https://www.twitter.com/" target="_blank">Twitter</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="subscriptionFooter">
+                  Subscribe to our Mailing list by entering Email here:&nbsp;
+                  <input type="email" name="subscribemail">&nbsp;
+                  <button> Subscribe now</button>
+               </div>
+            </div>
+         </div>
+      </body>
+      </html>
